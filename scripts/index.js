@@ -4,6 +4,7 @@ import ReactBootstrap from 'react-bootstrap';
 import NavBar from './navbar';
 import Home from './home';
 import Profile from './profile';
+import Match from './match';
 
 var { Route, DefaultRoute, RouteHandler, Link } = Router;
 
@@ -15,14 +16,7 @@ class App extends React.Component{
 		};
 	}
 
-  onSetSidebarOpen(open) {
-    this.setState({sidebarOpen: open});
-  }
-
-
-
 	render() {
-		var sidebarContent = <b>Sidebar content</b>;
 		return (
 			<div className='App'>
         		<NavBar />
@@ -40,6 +34,7 @@ var routes = (
 	<Route handler={App} name='App' path='/'>
 		<Route handler={Home} name='Home' path='home' />
 		<Route handler={Profile} name='Profile' path='profile' />
+		<Route handler={Match} name='Match' path='match' />
 	</Route>
 	);
 

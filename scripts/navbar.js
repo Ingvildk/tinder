@@ -14,6 +14,7 @@ export default class NavBar extends React.Component {
               <Navbar brand='tinder'  inverse toggleNavKey={0}>
               	<Nav right eventKey={0}>
               		<NavItemLink to='Home' eventKey={1} href='#'>Home</NavItemLink>
+              		<NavItemLink to='Match' eventKey={2} href='#'>Match</NavItemLink>
               	</Nav>
  			  </Navbar>
 			);
