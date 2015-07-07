@@ -20,7 +20,7 @@ class messageStore {
 	});
 	}
 	handleAddmessage(message) {
-		this.Emilia = this.match.concat(message);
+		this.Emilia = this.Emilia.concat(message);
 		this.errorMessage = null;
 	}
 }

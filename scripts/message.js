@@ -4,7 +4,7 @@ import ReactBootstrap from 'react-bootstrap';
 import ReactRouterBootstrap from 'react-router-bootstrap';
 import messageStore from './stores/messageStore';
 import userStore from './stores/userStore';
-import messageAction from '../scripts/actions/messageAction';
+import messageAction from './actions/messageAction';
 var { Route, DefaultRoute, RouteHandler, Link } = Router;
 var { Input, Grid, Row, Col, Button, Thumbnail, Glyphicon } = ReactBootstrap;
 var {NavItemLink, ButtonLink, ListGroupItemLink} = ReactRouterBootstrap;
