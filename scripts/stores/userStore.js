@@ -6,9 +6,9 @@ import matchAction from '../actions/matchAction';
 class userStore {
 	constructor() {
 		this.user = [
-		{name:'Anniken', age: '21', bio:'bio', img:'/images/flower2.jpg'},
-		{name:'Victoria', age:'19', bio:'bio', img: '/images/flower3.jpg'},
-		{name:'Mariell', age:'19', bio:'bio', img: '/images/flower6.jpg'}
+		{name:'Anniken', age: '21', bio:'bio', img:'/images/flower2.jpg', id:'2'},
+		{name:'Victoria', age:'19', bio:'bio', img: '/images/flower3.jpg', id:'3'},
+		{name:'Mariell', age:'19', bio:'bio', img: '/images/flower6.jpg', id: '6'}
 		];
 		this.errorMessage = null;
 		this.count = 0;

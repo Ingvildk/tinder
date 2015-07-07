@@ -37,7 +37,7 @@ export default class Home extends React.Component {
 		});
 	}
 	sweipHandler() {
-		var count = ((this.state.count) +1 );
+		var count = ((this.state.count) + 1 );
 		userAction.addCount(count);	
 		this.setState({
 			count: count
@@ -53,7 +53,7 @@ export default class Home extends React.Component {
 			var match = this.state.match.match;
 			for( var el in match) {
 				if (match[el].img == user[count].img) {
-					return (<p>ALREADY MATCHED</p>);
+					this.sweipHandler();
 				}}
 					return (			
 					<div className='home'>
@@ -65,9 +65,9 @@ export default class Home extends React.Component {
 					    <Col xs={8} md={7}>
 					      <Thumbnail src={user[count].img} alt='450x350'>
 					        <p className='name'><b>{user[count].name}</b></p>
-					        <Link to='Profile'><p>{user[count].bio}</p></Link>
+					        <Link to='Profile' params={{id :(user[count].id)}}><p>{user[count].bio}</p></Link>
 					        <p>
-					          <Button bsStyle='success' onClick={this.likeHandler.bind(this,user[count])}>L i k e  !</Button>&nbsp;
+					          <Button bsStyle='success' onClick={this.likeHandler.bind(this,user[count])}>L i k e  !</Button>
 					          <Button bsStyle='warning' onClick={this.sweipHandler.bind(this)}>Sweip</Button>
 					        </p>
 					      </Thumbnail>

@@ -5,6 +5,7 @@ import NavBar from './navbar';
 import Home from './home';
 import Profile from './profile';
 import Match from './match';
+import Message from './message';
 
 var { Route, DefaultRoute, RouteHandler, Link } = Router;
 
@@ -39,8 +40,9 @@ var routes_two = (
 var routes = (
 	<Route handler={App} name='App' path='/'>
 		<Route handler={Home} name='Home' path='home' />
-		<Route handler={Profile} name='Profile' path='profile' />
+		<Route handler={Profile} name='Profile' path='profile/:id' />
 		<Route handler={Match} name='Match' path='match' />
+		<Route handler={Message} name='Message' path='message' />
 	</Route>
 	);
 

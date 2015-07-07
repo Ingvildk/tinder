@@ -3,10 +3,10 @@ import matchAction from '../actions/matchAction';
 class matchStore {
 	constructor() {
 		this.match = [
-		{name:'Emilia', age: '21', bio:'Shepard was born 4/11/2154, is a graduate of the N7 special forces program (service no. 5923-AC-2826),', img:'/images/flower5.jpg'},
-		{name:'Jenny', age:'19', bio:'Shepard was born 4/11/2154, is a graduate of the N7 special forces program (service no. 5923-AC-2826),', img: '/images/flower4.jpg'},
-		{name:'Emilia', age: '21', bio:'Shepard was born 4/11/2154, is a graduate of the N7 special forces program (service no. 5923-AC-2826),', img:'/images/flower1.jpg'},
-		{name:'Jenny', age:'19', bio:'Shepard was born 4/11/2154, is a graduate of the N7 special forces program (service no. 5923-AC-2826),', img: '/images/flower3.jpg'}		
+		{name:'Emilia', age: '21', bio:'Shepard was born 4/11/2154, is a graduate of the N7 special forces program (service no. 5923-AC-2826),', img:'/images/flower5.jpg', id:'5'},
+		{name:'Jenny', age:'19', bio:'Shepard was born 4/11/2154, is a graduate of the N7 special forces program (service no. 5923-AC-2826),', img: '/images/flower4.jpg', id:'4'},
+		{name:'Emilia', age: '21', bio:'Shepard was born 4/11/2154, is a graduate of the N7 special forces program (service no. 5923-AC-2826),', img:'/images/flower1.jpg', id: '1'},
+		{name:'Jenny', age:'19', bio:'Shepard was born 4/11/2154, is a graduate of the N7 special forces program (service no. 5923-AC-2826),', img: '/images/flower3.jpg', id: '4'}		
 		];
 		this.errorMessage = null;
 	
@@ -17,7 +17,6 @@ class matchStore {
 
 	handleAdduser(user) {
 		this.match = this.match.concat(user);
-		console.log(this.match);
 		this.errorMessage = null;
 	}
 
