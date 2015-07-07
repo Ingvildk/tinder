@@ -5,7 +5,7 @@ import ReactRouterBootstrap from 'react-router-bootstrap';
 import messageStore from './stores/messageStore';
 import userStore from './stores/userStore';
 var { Route, DefaultRoute, RouteHandler, Link } = Router;
-var { Input, Grid, Row, Col, Button, Thumbnail } = ReactBootstrap;
+var { Input, Grid, Row, Col, Button, Thumbnail, Glyphicon } = ReactBootstrap;
 var {NavItemLink, ButtonLink, ListGroupItemLink} = ReactRouterBootstrap;
 
 export default class Message extends React.Component {
@@ -65,7 +65,12 @@ export default class Message extends React.Component {
 					  </Col>			  
 					  </Row>
 					  </Grid>
-						{messages}	  					
+						{messages}
+					<br/>		
+					  <Input placeholder= 'Type in message ' type='text' className= 'messageInput'/>		  					
+					  <div className='buttonMessage'>
+					  <Button bsStyle='success' className='buttonMessage_two'> <Glyphicon glyph='send' /> </Button>
+					  </div>
 				</div>
 				);
 	}
