@@ -21,7 +21,10 @@ export default class Message extends React.Component {
 
 	render() {
 	var melding = this.state.Emilia;
-	/*var user = this.state.user.user;	*/
+	var user = this.state.user;
+	var count = 0;
+	var _class;
+	var super_class;	
 	var currentdate = new Date(); 
 	var datetime =currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
@@ -31,20 +34,25 @@ export default class Message extends React.Component {
                 + currentdate.getSeconds();	
 	
 	var messages = melding.map(function(dict, index) {
+				count = count + 1;
+				console.log(dict.name);
+				if (dict.name == 'Ali') {
+					_class = 'messageText';
+					super_class = 'bubble';
+				}else {
+					_class = 'rightText';
+					super_class='bubble_alternative';
+				}
+				/*console.log (melding[count].message) ; */
 				return (
 					<div>
-					  <Row>
-					  <Col xs={6} md={3}>
-					    <p >{dict.message}</p>
-					  </Col>			  
-					  </Row>
-					  <Row>
-					  <Col xs={6} md={3}>
-					  </Col>
-					  <Col xs={6} md={3} className='divmessageText'>
-					    <p className='messageText'>{dict.message}</p>
-					  </Col>			  
-					  </Row>					  					
+					  <div>
+					  <div className={_class}>
+					  	<div className='rightImage'>
+					    <p className={super_class}>{dict.message}</p>
+					 	</div>
+					  </div>			  
+					  </div>					  					
 					  </div>
 					);				
 				})	
@@ -53,11 +61,11 @@ export default class Message extends React.Component {
 					<Grid>
 					  <Row>
 					  <Col xs={6} md={3}>
-					    <Thumbnail href='#' alt='171x180' src='./images/girl2.jpg'/>
+					    <Thumbnail href='#' alt='171x180' src='./images/flower2.jpg'/>
 					  </Col>			  
 					  </Row>
+					  </Grid>
 						{messages}	  					
-					</Grid>
 				</div>
 				);
 	}
