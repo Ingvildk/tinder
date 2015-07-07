@@ -27,6 +27,7 @@ export default class Home extends React.Component {
     }		
 */
 	likeHandler(user) {
+		console.log(user);
 		matchAction.addMatch(user); 
 		var count = ((this.state.count) + 1 );
 		/*matchAction.addMatch(user);*/

@@ -4,6 +4,7 @@ import ReactBootstrap from 'react-bootstrap';
 import ReactRouterBootstrap from 'react-router-bootstrap';
 import messageStore from './stores/messageStore';
 import userStore from './stores/userStore';
+import messageAction from '../scripts/actions/messageAction';
 var { Route, DefaultRoute, RouteHandler, Link } = Router;
 var { Input, Grid, Row, Col, Button, Thumbnail, Glyphicon } = ReactBootstrap;
 var {NavItemLink, ButtonLink, ListGroupItemLink} = ReactRouterBootstrap;
@@ -15,8 +16,36 @@ export default class Message extends React.Component {
 		this.state = messageStore.getState();
 	}
 
+
 	componentDidMount() {
-		this.setState({ user: userStore.getState() })
+		this.setState({ user: userStore.getState(),
+						value:'' });
+
+	}
+
+	onSubmit(e) {
+		e.preventDefault();
+		var message = this.refs.userInput.getValue();
+		var name = 'Emilia';
+		var currentdate = new Date(); 
+		var datetime =currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+        var dict = {};
+        dict['name'] = name;
+        dict['date'] = datetime;
+        dict['message'] = message;
+		if (message) {
+			var newValue = this.state.Emilia.concat([dict]);
+			this.setState({
+				Emilia: newValue
+			});
+		messageAction.addMessage(dict);
+		}
+
 	}
 
 	render() {
@@ -35,7 +64,6 @@ export default class Message extends React.Component {
 	
 	var messages = melding.map(function(dict, index) {
 				count = count + 1;
-				console.log(dict.name);
 				if (dict.name == 'Ali') {
 					_class = 'messageText';
 					super_class = 'bubble';
@@ -67,9 +95,9 @@ export default class Message extends React.Component {
 					  </Grid>
 						{messages}
 					<br/>		
-					  <Input placeholder= 'Type in message ' type='text' className= 'messageInput'/>		  					
+					  <Input ref='userInput' placeholder= 'Type in message ' type='text' className= 'messageInput'/>		  					
 					  <div className='buttonMessage'>
-					  <Button bsStyle='success' className='buttonMessage_two'> <Glyphicon glyph='send' /> </Button>
+					  <Button onClick= {this.onSubmit.bind(this)} bsStyle='success' className='buttonMessage_two'> <Glyphicon glyph='send' /> </Button>
 					  </div>
 				</div>
 				);
