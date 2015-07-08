@@ -6,7 +6,7 @@ import Home from './home';
 import Profile from './profile';
 import Match from './match';
 import Message from './message';
-
+import Chat from './chat';
 var { Route, DefaultRoute, RouteHandler, Link } = Router;
 
 class App extends React.Component{
@@ -43,6 +43,7 @@ var routes = (
 		<Route handler={Profile} name='Profile' path='profile/:id' />
 		<Route handler={Match} name='Match' path='match' />
 		<Route handler={Message} name='Message' path='message' />
+		<Route handler={Chat} name='Chat' path='chat/:userId' />
 	</Route>
 	);
 

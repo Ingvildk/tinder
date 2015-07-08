@@ -4,6 +4,8 @@ import ReactBootstrap from 'react-bootstrap';
 import ReactRouterBootstrap from 'react-router-bootstrap';
 import Profile from './profile';
 import matchStore from './stores/matchStore';
+import Chat from './chat';
+import chatStore from './stores/chatStore';
 var { Route, DefaultRoute, RouteHandler, Link } = Router;
 var { Input, Grid, Row, Col, Button, Thumbnail } = ReactBootstrap;
 var {NavItemLink, ButtonLink, ListGroupItemLink} = ReactRouterBootstrap;
@@ -13,6 +15,10 @@ export default class Matche extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = matchStore.getState();	
+	}
+	componentWillMount() {
+		var TESTING = chatStore.getState();
+		console.log(TESTING);
 	}
 
 	render() {
@@ -26,8 +32,9 @@ export default class Matche extends React.Component {
 					
 						<div className='Col'>
 							<div><img className='photo' src={dict.img} /></div>
-							<div className='text'><p className='text_two'>{dict.bio}</p>
-							<Button bsStyle='success' className='Button'>Chat</Button>
+							<div className='text'><b><p>{dict.name}</p></b>
+							<p className='text_two'>{dict.bio}</p>
+							<Link to ='Chat' params={{userId: dict.id}}><Button bsStyle='success' className='Button'>Chat</Button></Link>
 							</div>
 						</div>											
 					
