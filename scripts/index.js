@@ -6,6 +6,7 @@ import Home from './home';
 import Profile from './profile';
 import Match from './match';
 import Message from './message';
+import IndividualChat from './individualChat';
 
 var { Route, DefaultRoute, RouteHandler, Link } = Router;
 
@@ -43,6 +44,7 @@ var routes = (
 		<Route handler={Profile} name='Profile' path='profile/:id' />
 		<Route handler={Match} name='Match' path='match' />
 		<Route handler={Message} name='Message' path='message' />
+		<Route handler={IndividualChat} name='IndividualChat' path='individualChat/:idChat' />
 	</Route>
 	);
 

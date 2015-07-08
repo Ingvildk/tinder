@@ -16,8 +16,8 @@ export default class NavBar extends React.Component {
               		<NavItemLink to='Home' eventKey={1} href='#'>Home</NavItemLink>
               		<NavItemLink to='Match' eventKey={2} href='#'>Match</NavItemLink>
               		<NavItemLink to='Message' eventKey={3} href='#'>Message </NavItemLink>
-              	</Nav>
- 			  </Navbar>
-			);
+                     </Nav>
+ 		</Navbar>
+		);
 	}   
 };

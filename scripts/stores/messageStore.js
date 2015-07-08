@@ -17,8 +17,14 @@ class messageStore {
 		];
 	this.bindListeners({
 		handleAddmessage: messageAction.ADD_MESSAGE
+		/*handleAddcontact: messageAction.ADD_CONTACT*/
 	});
 	}
+	/*
+	handleAddcontact(dict) {
+		this.setState({dict.name: dict.name , img: dict.img, id: dict.id });
+	}
+	*/
 	handleAddmessage(message) {
 		this.Emilia = this.Emilia.concat(message);
 		this.errorMessage = null;
