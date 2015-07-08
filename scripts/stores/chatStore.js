@@ -10,7 +10,10 @@ class chatStore {
 	});
 	}
 	handleAddchat(user){
-		this.chat = this.chat.concat([user]);
+	var currentdate = new Date();
+	currentdate = currentdate.getTime();		
+	user['date'] = currentdate;
+	this.chat = this.chat.concat([user]);
 	}
 }
 export default alt.createStore(chatStore, 'chatStore');

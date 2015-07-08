@@ -23,16 +23,15 @@ export default class Chat extends React.Component {
 	componentWillMount() {
 		var newArray = [];
 		var chat = this.state.chat;
-		console.log(chat);
 		var userId = this.context.router.getCurrentParams().userId;
-		console.log(userId);
 		console.log('Before corectUser function');
-		var correctUser = function(chat) { return _.filter(chat, function(element){
-				console.log(element.id);
-				return (userId == element.id)
+		var correctUser = _.filter(chat, function(element){
+				return userId == element.id;
 			});
-		}
-		console.log(correctUser() )		
+		newArray = _.sortBy(correctUser, function(num) {
+			return num.date;
+		});
+		console.log(newArray);		
 		}
 
 	render() {

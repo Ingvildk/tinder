@@ -18,7 +18,6 @@ export default class Matche extends React.Component {
 	}
 	componentWillMount() {
 		var TESTING = chatStore.getState();
-		console.log(TESTING);
 	}
 
 	render() {
